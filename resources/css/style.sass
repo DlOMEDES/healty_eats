@@ -1,0 +1,796 @@
+// FONTS
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,900)
+$main_font: lato
+
+// COLOR
+$black: #000000
+$white: #ffffff
+$main_clr: #5B5B5B
+$highlight_clr: #E56739
+$low_clr: #B2502C
+$bg_clr: #F4F4F4
+$dark_bg: #1D1F21
+// GLOBAL STYLES
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  list-style: none
+  text-align: center
+
+html
+  background-color: $white
+  color: $main_clr
+  font-family: Lato, sans-serif
+  font-size: 14px
+  font-weight: 300
+  text-rendering: optimizeLegibility
+
+// GLOABL SECTIONS
+section
+  width: 80%
+  margin: 5em 10%
+
+// GLOABL HEADINGS
+h1, h2, h3
+  font-weight: 300
+  text-transform: uppercase
+  word-spacing: normal
+
+// GLOABL ARTICLES
+article
+  margin: 7% 0
+  padding: 1em 0
+
+// GLOABL ICONS
+.icon_big
+  font-size: 4em
+  color: $highlight_clr
+  display: block
+
+.small_icon
+  width: 30px
+  color: $highlight_clr
+  font-size: 120%
+  span
+    vertical-align: middle
+
+//GLOABL LINKS
+a:link, a:visited
+  text-decoration: none
+  color: $highlight_clr
+  padding-bottom: 1px
+  border-bottom: 1px solid $highlight_clr
+  transition: border-bottom .3s, color .3s
+
+a:hover,
+a:active
+  color: $main_clr
+  border: 1px solid transparent
+
+
+//ROUNDED BUTTONS
+.btn:link, .btn:visited
+  font-weight: 300
+  padding: 10px 30px
+  border-radius: 5em
+  transition: background-color 0.5s, border 0.5s, color 0.5s
+#btn-high
+  border: 1px solid $highlight_clr
+  background: $highlight_clr
+  color: $white
+  margin-right: .5em
+  &:hover
+    border: 1px solid $low_clr
+    background-color: $low_clr
+    color: $white
+#btn-low
+  border: 1px solid $highlight_clr
+  color: $highlight_clr
+  &:hover
+    border: 1px solid $low_clr
+    background-color: $low_clr
+    color: $white
+
+
+
+//GLOABL PARAGRAPHS
+p
+  line-height: 140%
+  font-size: 110%
+  width: 90%
+  margin-left: 5%
+
+// MAIN HEADER
+.main_head
+  display: flex
+  // justify-content: center
+  // align-items: center
+  flex-direction: column
+  background:
+    image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(img/hero.jpg)
+    size: cover
+    position: center
+    repeat: no-repeat
+  height: 100vh
+  background-attachment: fixed
+
+  // NAVIGATION
+  .nav_menu
+    width: 100%
+    height: 100%
+    background: $highlight_clr
+    padding: 30px 0
+    position: fixed
+    top: 0
+    text-align: center
+    transform: translateX(-100%)
+    transition: transform 0.6s ease
+    z-index: 99
+    .nav_ul
+      position: relative
+      top: 20%
+    .navi
+      padding: 20px
+      font-weight: 900
+      font-size: 1.8em
+      letter-spacing: 3px
+      line-height: 3
+      text-decoration: none
+      color: rgba($white, 0.8)
+      text-transform: uppercase
+  .nav_menu_open
+    transform: translateX(0)
+
+  //  MOBILE NAV BUTTON
+  .mobile_nav_btn
+    width: 30px
+    height: 25px
+    position: absolute
+    margin: 1.5em
+    right: 10px
+    top: 10px
+    z-index: 999
+    cursor: pointer
+    .mobile_nav_line
+      width: 100%
+      height: 3px
+      background: rgba($white, 0.8)
+      position: relative
+      transition: 1s ease
+      &:nth-of-type(2)
+        margin: 0.35em 0
+    .mobile_line_top
+      transform: rotate(45deg)
+      top: 13px
+      position: absolute
+    .mobile_line_middle
+      display: none
+    .mobile_line_bottom
+      transform: rotate(135deg)
+      top: 13px
+      position: absolute
+
+// LOGO
+.logo
+  position: relative
+  top: 17%
+  height: 180px
+  width: auto
+
+// MAIN BANNER
+.top_banner
+  position: relative
+  top: 27.5%
+  // TOP HEADER BUTTONS
+.buttons
+  margin-top: 3.5em
+  .btn-low
+    a
+      color: $highlight_clr
+
+// NON GLOBAL HEADINGS
+h1
+  color: rgba($white, 0.85)
+  font:
+    size: 240%
+    weight: 300
+  text-transform: uppercase
+  word-spacing: 4px
+  letter-spacing: 1px
+
+h2
+  font-size: 180%
+  word-spacing: 2px
+  &:after
+    height: 2px
+    background-color: $highlight_clr
+    content: " "
+    display: block
+    width: 50%
+    margin: .5em auto
+
+h3
+  font-size: 120%
+
+// FEATURES SECTION
+.features_head
+  margin-bottom: 3.5em
+
+// MEAL SECTION
+.meals_sec
+  margin-bottom: 0
+  .meal_showcase
+    width: 100%
+    display: flex
+    flex-direction: column
+    .meal_photo
+      width: 100%
+      overflow: hidden
+      background: $black
+      img
+        width: 100%
+        opacity: 0.7
+        &:hover
+          transform: scale(1.3)
+          transition: 1s
+          opacity: 1
+
+// HOW IT WORKS-STEPS
+.step_section
+  background-color: $bg_clr
+  h2
+    padding: 3.5em 0 .7em 0
+  .rows
+    padding-bottom: 3.5em
+    .app_photo
+      width: 100%
+      img
+        width: 60%
+    .steps
+      padding-top: 3.5em
+      width: 80%
+      margin: 0 auto
+      span
+        display: block
+        width: 50px
+        height: 50px
+        font-size: 1.5em
+        padding: .5em
+        border: 1px solid $highlight_clr
+        border-radius: 100%
+        margin: 0 auto
+      p
+        padding: .5em 0 3em 0
+        font-size: 130%
+    .app_store_btn
+      width: 90%
+      margin: 0 auto
+      img
+        width: 49%
+        height: auto
+        margin: .5em 0
+      a:link, :visited
+        border: none
+
+// CITIES SECTION
+.cities
+  width: 90%
+  margin: 5em 5%
+  .article_row
+    .rows
+      img
+        width: 100%
+      h3
+        padding: .5em 0 .3em 0
+.city_ppl,
+.plan_info
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  p
+    margin: 0
+    width: 35%
+
+
+// TESTIMONIALS SECTION
+.testimonials
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/back-customers.jpg)
+  background-size: cover
+  color: rgba($white, 0.85)
+  background-attachment: fixed
+  padding: 5em 0
+  blockquote
+    padding: 8%
+    font-style: italic
+    line-height: 145%
+  cite
+    display: block
+    font-size: 90%
+    margin: 20px 0 1em 0
+    position: relative
+    &:after
+      content: "\201C"
+      font-size: 500%
+      position: absolute
+      top: 200px
+      left: -20px
+    p
+      padding: .5em
+    img
+      height: 100%
+      border-radius: 50%
+      margin-right: 10px
+
+// PLANS AND PRICING SECTIONS
+.plans_pricing
+  background: $bg_clr
+  .plan_box
+    background-color: $white
+    border-radius: 5px
+    width: 90%
+    margin-left: 5%
+    padding: 2em 0
+    hr
+      color: $main_clr
+      margin: 1em
+    .plan_price
+      font-size: 300%
+      font-weight: 100
+      color: $highlight_clr
+      span
+        font-size: 30%
+        font-weight: 400
+    .plan_meal
+      font-size: 80%
+      margin-top: -1em
+      ul
+        li
+          font-size: 120%
+          padding: .2em 0
+          &:before
+            font-size: 120%
+
+  .buttons
+    margin: 1.5em 0
+
+
+// FORM SECTION
+//.contact_section
+//  width: 60%
+//  margin: 0 auto
+//  input, select, textarea
+//    width: 100%
+//    padding: 7px
+//    border-radius: 3px
+
+
+
+
+//FOOTER SECTION
+footer
+  position: relative
+  background: $dark_bg
+  width: 100%
+  .foot_box
+    width: 90%
+    margin-left: 5%
+    display: flex
+    justify-content: space-around
+    padding-top: 5em
+    font-size: 120%
+    .foot_nav,
+    .social_link
+      padding-bottom: 3em
+      ul
+        display: flex
+        li
+          padding-right: 1em
+          a:link, a:visited
+            border: none
+            color: $main_clr
+            transition: color 0.3s
+            &:hover,
+            &:active
+              color: $highlight_clr
+    .social_link
+      li
+        a:link, a:visited
+          font-size: 150%
+  .rows
+    padding: 2em 0
+
+/////////////DESKTOP MEDIA QUERIES///////////////////
+////////////////////////////////////////////////////
+
+@media only screen and (min-width: 680px)
+
+  // GLOABL SECTIONS
+  section
+    width: 80%
+    margin: 5em 10%
+
+  // GLOABL HEADINGS
+  h1, h2, h3
+    font-weight: 300
+    text-transform: uppercase
+    word-spacing: normal
+
+  // GLOABL ARTICLES
+  article
+    margin: 7% 0
+    padding: 1em 0
+
+  // GLOABL ICONS
+  .icon_big
+    font-size: 4em
+    color: $highlight_clr
+    display: block
+
+  .small_icon
+    width: 30px
+    color: $highlight_clr
+    font-size: 120%
+    span
+      vertical-align: middle
+
+  //GLOABL LINKS
+  a:link, a:visited
+    text-decoration: none
+    color: $highlight_clr
+    padding-bottom: 1px
+    border-bottom: 1px solid $highlight_clr
+    transition: border-bottom .3s, color .3s
+
+  a:hover,
+  a:active
+    color: $main_clr
+    border: 1px solid transparent
+
+
+  //ROUNDED BUTTONS
+  .btn:link, .btn:visited
+    font-weight: 300
+    padding: 10px 30px
+    border-radius: 5em
+    transition: background-color 0.5s, border 0.5s, color 0.5s
+  #btn-high
+    border: 1px solid $highlight_clr
+    background: $highlight_clr
+    color: $white
+    margin-right: .5em
+    &:hover
+      border: 1px solid $low_clr
+      background-color: $low_clr
+      color: $white
+  #btn-low
+    border: 1px solid $highlight_clr
+    color: $highlight_clr
+    &:hover
+      border: 1px solid $low_clr
+      background-color: $low_clr
+      color: $white
+
+
+
+  //GLOABL PARAGRAPHS
+  p
+    line-height: 140%
+    font-size: 110%
+    width: 90%
+    margin-left: 5%
+
+  // MAIN HEADER
+  .main_head
+    display: flex
+    // justify-content: center
+    // align-items: center
+    flex-direction: column
+    background:
+      image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(img/hero.jpg)
+      size: cover
+      position: center
+      repeat: no-repeat
+    height: 100vh
+    background-attachment: fixed
+
+    // NAVIGATION
+    .nav_menu
+      width: 100%
+      height: auto
+      background: transparent
+      padding: 0
+      position: relative
+      top: 0
+      text-align: center
+      transform: translateX(0)
+      transition: transform 0.6s ease
+      z-index: 99
+      color: $white
+      .nav_ul
+        display: flex
+        position: relative
+        justify-content: flex-end
+        top: 10px
+        right: 10px
+      .navi
+        padding: 0.5em
+        font-weight: 400
+        font-size: 1em
+        letter-spacing: 0px
+        line-height: 3
+        text-decoration: none
+        color: rgba($white, 0.8)
+        text-transform: uppercase
+        border: none
+    .nav_menu_open
+      transform: translateX(0)
+
+    //  MOBILE NAV BUTTON
+    .mobile_nav_btn
+      display: none
+      width: 30px
+      height: 25px
+      position: absolute
+      margin: 1.5em
+      right: 10px
+      top: 10px
+      z-index: 999
+      cursor: pointer
+      .mobile_nav_line
+        width: 100%
+        height: 3px
+        background: rgba($white, 0.8)
+        position: relative
+        transition: 1s ease
+        &:nth-of-type(2)
+          margin: 0.35em 0
+      .mobile_line_top
+        transform: rotate(45deg)
+        top: 13px
+        position: absolute
+      .mobile_line_middle
+        display: none
+      .mobile_line_bottom
+        transform: rotate(135deg)
+        top: 13px
+        position: absolute
+
+  // LOGO
+  .logo
+    position: relative
+    top: 17%
+    height: 180px
+    width: auto
+
+  // MAIN BANNER
+  .top_banner
+    position: relative
+    top: 27.5%
+    // TOP HEADER BUTTONS
+  .buttons
+    margin-top: 3.5em
+    .btn-low
+      a
+        color: $highlight_clr
+
+  // NON GLOBAL HEADINGS
+  h1
+    color: rgba($white, 0.85)
+    font:
+      size: 240%
+      weight: 300
+    text-transform: uppercase
+    word-spacing: 4px
+    letter-spacing: 1px
+
+  h2
+    font-size: 180%
+    word-spacing: 2px
+    &:after
+      height: 2px
+      background-color: $highlight_clr
+      content: " "
+      display: block
+      width: 50%
+      margin: .5em auto
+
+  h3
+    font-size: 120%
+
+  // FEATURES SECTION
+  .features_head
+    margin-bottom: 3.5em
+
+  // MEAL SECTION
+  .meals_sec
+    margin-bottom: 0
+    .meal_showcase
+      width: 100%
+      display: flex
+      flex-direction: column
+      .meal_photo
+        width: 100%
+        overflow: hidden
+        background: $black
+        img
+          width: 100%
+          opacity: 0.7
+          &:hover
+            transform: scale(1.3)
+            transition: 1s
+            opacity: 1
+
+  // HOW IT WORKS-STEPS
+  .step_section
+    background-color: $bg_clr
+    h2
+      padding: 3.5em 0 .7em 0
+    .rows
+      padding-bottom: 3.5em
+      .app_photo
+        width: 100%
+        img
+          width: 60%
+      .steps
+        padding-top: 3.5em
+        width: 80%
+        margin: 0 auto
+        span
+          display: block
+          width: 50px
+          height: 50px
+          font-size: 1.5em
+          padding: .5em
+          border: 1px solid $highlight_clr
+          border-radius: 100%
+          margin: 0 auto
+        p
+          padding: .5em 0 3em 0
+          font-size: 130%
+      .app_store_btn
+        width: 90%
+        margin: 0 auto
+        img
+          width: 49%
+          height: auto
+          margin: .5em 0
+        a:link, :visited
+          border: none
+
+  // CITIES SECTION
+  .cities
+    width: 90%
+    margin: 5em 5%
+    .article_row
+      .rows
+        img
+          width: 100%
+        h3
+          padding: .5em 0 .3em 0
+  .city_ppl,
+  .plan_info
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    p
+      margin: 0
+      width: 35%
+
+
+  // TESTIMONIALS SECTION
+  .testimonials
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/back-customers.jpg)
+    background-size: cover
+    color: rgba($white, 0.85)
+    background-attachment: fixed
+    padding: 5em 0
+    blockquote
+      padding: 8%
+      font-style: italic
+      line-height: 145%
+    cite
+      display: block
+      font-size: 90%
+      margin: 20px 0 1em 0
+      position: relative
+      &:after
+        content: "\201C"
+        font-size: 500%
+        position: absolute
+        top: 200px
+        left: -20px
+      p
+        padding: .5em
+      img
+        height: 100%
+        border-radius: 50%
+        margin-right: 10px
+
+  // PLANS AND PRICING SECTIONS
+  .plans_pricing
+    background: $bg_clr
+    .plan_box
+      background-color: $white
+      border-radius: 5px
+      width: 90%
+      margin-left: 5%
+      padding: 2em 0
+      hr
+        color: $main_clr
+        margin: 1em
+      .plan_price
+        font-size: 300%
+        font-weight: 100
+        color: $highlight_clr
+        span
+          font-size: 30%
+          font-weight: 400
+      .plan_meal
+        font-size: 80%
+        margin-top: -1em
+        ul
+          li
+            font-size: 120%
+            padding: .2em 0
+            &:before
+              font-size: 120%
+
+    .buttons
+      margin: 1.5em 0
+
+
+  // FORM SECTION
+  //.contact_section
+  //  width: 60%
+  //  margin: 0 auto
+  //  input, select, textarea
+  //    width: 100%
+  //    padding: 7px
+  //    border-radius: 3px
+
+
+
+
+  //FOOTER SECTION
+  footer
+    position: relative
+    background: $dark_bg
+    width: 100%
+    .foot_box
+      width: 90%
+      margin-left: 5%
+      display: flex
+      justify-content: space-around
+      padding-top: 5em
+      font-size: 120%
+      .foot_nav,
+      .social_link
+        padding-bottom: 3em
+        ul
+          display: flex
+          li
+            padding-right: 1em
+            a:link, a:visited
+              border: none
+              color: $main_clr
+              transition: color 0.3s
+              &:hover,
+              &:active
+                color: $highlight_clr
+      .social_link
+        li
+          a:link, a:visited
+            font-size: 150%
+    .rows
+      padding: 2em 0
+
+
+
+//DESKTOP MEDIA QUERIES
+
+
+    
+    
