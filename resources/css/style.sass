@@ -248,9 +248,9 @@ h3
       img
         width: 60%
     .steps
-      padding-top: 3.5em
       width: 80%
       margin: 0 auto
+      padding-top: 3.5em
       span
         display: block
         width: 50px
@@ -609,17 +609,18 @@ footer
     .meal_showcase
       width: 100%
       display: flex
-      flex-direction: column
+      flex-direction: row
+      flex-wrap: wrap
       .meal_photo
-        width: 100%
+        width: 25%
         overflow: hidden
         background: $black
         img
           width: 100%
           opacity: 0.7
           &:hover
-            transform: scale(1.3)
-            transition: 1s
+            transform: scale(1.5)
+            transition: 2s
             opacity: 1
 
   // HOW IT WORKS-STEPS
@@ -629,14 +630,17 @@ footer
       padding: 3.5em 0 .7em 0
     .rows
       padding-bottom: 3.5em
+      display: flex
+      
       .app_photo
-        width: 100%
+        width: 30%
+        padding-left: 10%
         img
-          width: 60%
+          width: 100%
       .steps
-        padding-top: 3.5em
-        width: 80%
+        width: 40%
         margin: 0 auto
+        padding-top: 0
         span
           display: block
           width: 50px
@@ -649,15 +653,16 @@ footer
         p
           padding: .5em 0 3em 0
           font-size: 130%
-      .app_store_btn
-        width: 90%
-        margin: 0 auto
-        img
-          width: 49%
-          height: auto
-          margin: .5em 0
-        a:link, :visited
-          border: none
+    .app_store_btn
+      width: 80%
+      margin: 0 auto
+      img
+        padding-bottom: 1em
+        width: 20%
+        height: auto
+        margin: .5em 0
+      a:link, :visited
+        border: none
 
   // CITIES SECTION
   .cities
