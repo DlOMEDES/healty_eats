@@ -60,14 +60,13 @@ a:link, a:visited
   text-decoration: none
   color: $highlight_clr
   padding-bottom: 1px
-  border-bottom: 1px solid $highlight_clr
   transition: border-bottom .3s, color .3s
 
 a:hover,
 a:active
   color: $main_clr
-  border: 1px solid transparent
-
+  border-bottom: 1px solid $highlight_clr
+  
 
 //ROUNDED BUTTONS
 .btn:link, .btn:visited
@@ -116,60 +115,28 @@ p
   background-attachment: fixed
 
   // NAVIGATION
-  .nav_menu
-    width: 100%
-    height: 100%
-    background: $highlight_clr
-    padding: 30px 0
-    position: fixed
-    top: 0
-    text-align: center
-    transform: translateX(-100%)
-    transition: transform 0.6s ease
-    z-index: 99
+  nav
     .nav_ul
+      display: flex
+      flex-direction: row
+      justify-content: space-evenly
       position: relative
-      top: 20%
+      top: 0
+      padding: 10px 0
     .navi
-      padding: 20px
-      font-weight: 900
-      font-size: 1.8em
-      letter-spacing: 3px
-      line-height: 3
+      letter-spacing: 1px
       text-decoration: none
-      color: rgba($white, 0.8)
+      color: $main_clr
       text-transform: uppercase
-  .nav_menu_open
-    transform: translateX(0)
-
-  //  MOBILE NAV BUTTON
-  .mobile_nav_btn
-    width: 30px
-    height: 25px
-    position: absolute
-    margin: 1.5em
-    right: 10px
-    top: 10px
-    z-index: 999
-    cursor: pointer
-    .mobile_nav_line
-      width: 100%
-      height: 3px
-      background: rgba($white, 0.8)
-      position: relative
-      transition: 1s ease
-      &:nth-of-type(2)
-        margin: 0.35em 0
-    .mobile_line_top
-      transform: rotate(45deg)
-      top: 13px
-      position: absolute
-    .mobile_line_middle
-      display: none
-    .mobile_line_bottom
-      transform: rotate(135deg)
-      top: 13px
-      position: absolute
+      
+// STICKY NAV
+.sticky 
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background-color: $white
+  box-shadow: 0 2px 2px #efefef
 
 // LOGO
 .logo
@@ -263,15 +230,15 @@ h3
       p
         padding: .5em 0 3em 0
         font-size: 130%
-    .app_store_btn
-      width: 90%
-      margin: 0 auto
-      img
-        width: 49%
-        height: auto
-        margin: .5em 0
-      a:link, :visited
-        border: none
+  .app_store_btn
+    width: 90%
+    margin: 0 auto
+    img
+      width: 49%
+      height: auto
+      margin: .5em 0
+    a:link, :visited
+      border: none
 
 // CITIES SECTION
 .cities
@@ -326,6 +293,13 @@ h3
 // PLANS AND PRICING SECTIONS
 .plans_pricing
   background: $bg_clr
+  padding: 3.5em 0
+  
+  &-h2
+    margin-bottom: 1em    
+  .rows
+    display: flex   
+    flex-direction: column 
   .plan_box
     background-color: $white
     border-radius: 5px
@@ -376,28 +350,23 @@ footer
   .foot_box
     width: 90%
     margin-left: 5%
-    display: flex
-    justify-content: space-around
     padding-top: 5em
-    font-size: 120%
+    font-size: 100%
     .foot_nav,
     .social_link
       padding-bottom: 3em
-      ul
-        display: flex
-        li
-          padding-right: 1em
-          a:link, a:visited
-            border: none
-            color: $main_clr
-            transition: color 0.3s
-            &:hover,
-            &:active
-              color: $highlight_clr
+      display: flex
+      justify-content: space-evenly
+      a:link, a:visited
+        border: none
+        color: $main_clr
+        transition: color 0.3s
+        &:hover,
+        &:active
+          color: $highlight_clr
     .social_link
-      li
-        a:link, a:visited
-          font-size: 150%
+      a:link, a:visited
+        font-size: 150%
   .rows
     padding: 2em 0
 
@@ -496,73 +465,46 @@ footer
     background-attachment: fixed
 
     // NAVIGATION
-    .nav_menu
+    nav
       width: 100%
       height: auto
-      background: transparent
       padding: 0
-      position: relative
-      top: 0
-      text-align: center
-      transform: translateX(0)
-      transition: transform 0.6s ease
-      z-index: 99
-      color: $white
+      margin: 0
       .nav_ul
         display: flex
         position: relative
         justify-content: flex-end
-        top: 10px
-        right: 10px
+        top: 0
+        margin-right: 4em
       .navi
-        padding: 0.5em
-        font-weight: 400
-        font-size: 1em
+        color: $main_clr
+        padding: .3em 0
+        margin: 0 .5em 
+        font-weight: 300
+        font-size: 1.2em
         letter-spacing: 0px
         line-height: 3
         text-decoration: none
-        color: rgba($white, 0.8)
         text-transform: uppercase
         border: none
-    .nav_menu_open
-      transform: translateX(0)
+        &:hover
+          border-bottom: 1.5px solid $highlight_clr
+          transition: .5s ease all
 
-    //  MOBILE NAV BUTTON
-    .mobile_nav_btn
-      display: none
-      width: 30px
-      height: 25px
-      position: absolute
-      margin: 1.5em
-      right: 10px
-      top: 10px
-      z-index: 999
-      cursor: pointer
-      .mobile_nav_line
-        width: 100%
-        height: 3px
-        background: rgba($white, 0.8)
-        position: relative
-        transition: 1s ease
-        &:nth-of-type(2)
-          margin: 0.35em 0
-      .mobile_line_top
-        transform: rotate(45deg)
-        top: 13px
-        position: absolute
-      .mobile_line_middle
-        display: none
-      .mobile_line_bottom
-        transform: rotate(135deg)
-        top: 13px
-        position: absolute
-
+  // STICKY NAV
+  .sticky 
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    background-color: $white
+    box-shadow: 0 2px 2px #efefef
   // LOGO
   .logo
     position: relative
     top: 17%
     height: 180px
-    width: auto
+    
 
   // MAIN BANNER
   .top_banner
@@ -600,8 +542,13 @@ footer
     font-size: 120%
 
   // FEATURES SECTION
-  .features_head
-    margin-bottom: 3.5em
+  .features
+    &_head
+      margin-bottom: 3.5em
+      width: 800px
+      margin: 0 auto
+    &_row
+      display: flex
 
   // MEAL SECTION
   .meals_sec
@@ -669,7 +616,12 @@ footer
     width: 90%
     margin: 5em 5%
     .article_row
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
       .rows
+        width: 20%
+        padding-right: 2em
         img
           width: 100%
         h3
@@ -693,9 +645,11 @@ footer
     background-attachment: fixed
     padding: 5em 0
     blockquote
-      padding: 8%
+      padding: 3%
       font-style: italic
       line-height: 145%
+      width: 400px
+      margin: 0 auto
     cite
       display: block
       font-size: 90%
@@ -717,34 +671,38 @@ footer
   // PLANS AND PRICING SECTIONS
   .plans_pricing
     background: $bg_clr
-    .plan_box
-      background-color: $white
-      border-radius: 5px
-      width: 90%
-      margin-left: 5%
-      padding: 2em 0
-      hr
-        color: $main_clr
-        margin: 1em
-      .plan_price
-        font-size: 300%
-        font-weight: 100
-        color: $highlight_clr
-        span
-          font-size: 30%
-          font-weight: 400
-      .plan_meal
-        font-size: 80%
-        margin-top: -1em
-        ul
-          li
-            font-size: 120%
-            padding: .2em 0
-            &:before
+    padding: 3.5em
+    .rows
+      display: flex
+      flex-direction: row
+      .plan_box
+        background-color: $white
+        border-radius: 5px
+        width: 90%
+        margin-left: 5%
+        padding: 2em 0
+        hr
+          color: $main_clr
+          margin: 1em
+        .plan_price
+          font-size: 300%
+          font-weight: 100
+          color: $highlight_clr
+          span
+            font-size: 30%
+            font-weight: 400
+        .plan_meal
+          font-size: 80%
+          margin-top: -1em
+          ul
+            li
               font-size: 120%
+              padding: .2em 0
+              &:before
+                font-size: 120%
 
-    .buttons
-      margin: 1.5em 0
+      .buttons
+        margin: 1.5em 0
 
 
   // FORM SECTION
@@ -767,30 +725,25 @@ footer
     .foot_box
       width: 90%
       margin-left: 5%
-      display: flex
-      justify-content: space-around
       padding-top: 5em
       font-size: 120%
       .foot_nav,
       .social_link
-        padding-bottom: 3em
-        ul
-          display: flex
-          li
-            padding-right: 1em
-            a:link, a:visited
-              border: none
-              color: $main_clr
-              transition: color 0.3s
-              &:hover,
-              &:active
-                color: $highlight_clr
+        padding-bottom: 1em
+        display: flex
+        justify-content: center
+        a:link, a:visited
+          border: none
+          color: $main_clr
+          transition: color 0.3s
+          padding: 1em
+          &:hover,
+          &:active
+            color: $highlight_clr
       .social_link
-        li
-          a:link, a:visited
-            font-size: 150%
-    .rows
-      padding: 2em 0
+        a:link, a:visited
+          font-size: 150%
+  
 
 
 

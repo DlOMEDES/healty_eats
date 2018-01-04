@@ -44,13 +44,12 @@ a:link, a:visited {
   text-decoration: none;
   color: #E56739;
   padding-bottom: 1px;
-  border-bottom: 1px solid #E56739;
   transition: border-bottom 0.3s, color 0.3s; }
 
 a:hover,
 a:active {
   color: #5B5B5B;
-  border: 1px solid transparent; }
+  border-bottom: 1px solid #E56739; }
 
 .btn:link, .btn:visited {
   font-weight: 300;
@@ -91,58 +90,26 @@ p {
   background-repeat: no-repeat;
   height: 100vh;
   background-attachment: fixed; }
-  .main_head .nav_menu {
-    width: 100%;
-    height: 100%;
-    background: #E56739;
-    padding: 30px 0;
-    position: fixed;
+  .main_head nav .nav_ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
     top: 0;
-    text-align: center;
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-    z-index: 99; }
-    .main_head .nav_menu .nav_ul {
-      position: relative;
-      top: 20%; }
-    .main_head .nav_menu .navi {
-      padding: 20px;
-      font-weight: 900;
-      font-size: 1.8em;
-      letter-spacing: 3px;
-      line-height: 3;
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.8);
-      text-transform: uppercase; }
-  .main_head .nav_menu_open {
-    transform: translateX(0); }
-  .main_head .mobile_nav_btn {
-    width: 30px;
-    height: 25px;
-    position: absolute;
-    margin: 1.5em;
-    right: 10px;
-    top: 10px;
-    z-index: 999;
-    cursor: pointer; }
-    .main_head .mobile_nav_btn .mobile_nav_line {
-      width: 100%;
-      height: 3px;
-      background: rgba(255, 255, 255, 0.8);
-      position: relative;
-      transition: 1s ease; }
-      .main_head .mobile_nav_btn .mobile_nav_line:nth-of-type(2) {
-        margin: 0.35em 0; }
-    .main_head .mobile_nav_btn .mobile_line_top {
-      transform: rotate(45deg);
-      top: 13px;
-      position: absolute; }
-    .main_head .mobile_nav_btn .mobile_line_middle {
-      display: none; }
-    .main_head .mobile_nav_btn .mobile_line_bottom {
-      transform: rotate(135deg);
-      top: 13px;
-      position: absolute; }
+    padding: 10px 0; }
+  .main_head nav .navi {
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #5B5B5B;
+    text-transform: uppercase; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 2px #efefef; }
 
 .logo {
   position: relative;
@@ -228,15 +195,15 @@ h3 {
       .step_section .rows .steps p {
         padding: 0.5em 0 3em 0;
         font-size: 130%; }
-    .step_section .rows .app_store_btn {
-      width: 90%;
-      margin: 0 auto; }
-      .step_section .rows .app_store_btn img {
-        width: 49%;
-        height: auto;
-        margin: 0.5em 0; }
-      .step_section .rows .app_store_btn a:link, .step_section .rows .app_store_btn :visited {
-        border: none; }
+  .step_section .app_store_btn {
+    width: 90%;
+    margin: 0 auto; }
+    .step_section .app_store_btn img {
+      width: 49%;
+      height: auto;
+      margin: 0.5em 0; }
+    .step_section .app_store_btn a:link, .step_section .app_store_btn :visited {
+      border: none; }
 
 .cities {
   width: 90%;
@@ -286,7 +253,13 @@ h3 {
       margin-right: 10px; }
 
 .plans_pricing {
-  background: #F4F4F4; }
+  background: #F4F4F4;
+  padding: 3.5em 0; }
+  .plans_pricing-h2 {
+    margin-bottom: 1em; }
+  .plans_pricing .rows {
+    display: flex;
+    flex-direction: column; }
   .plans_pricing .plan_box {
     background-color: #ffffff;
     border-radius: 5px;
@@ -321,32 +294,26 @@ footer {
   footer .foot_box {
     width: 90%;
     margin-left: 5%;
-    display: flex;
-    justify-content: space-around;
     padding-top: 5em;
-    font-size: 120%; }
+    font-size: 100%; }
     footer .foot_box .foot_nav,
     footer .foot_box .social_link {
-      padding-bottom: 3em; }
-      footer .foot_box .foot_nav ul,
-      footer .foot_box .social_link ul {
-        display: flex; }
-        footer .foot_box .foot_nav ul li,
-        footer .foot_box .social_link ul li {
-          padding-right: 1em; }
-          footer .foot_box .foot_nav ul li a:link, footer .foot_box .foot_nav ul li a:visited,
-          footer .foot_box .social_link ul li a:link,
-          footer .foot_box .social_link ul li a:visited {
-            border: none;
-            color: #5B5B5B;
-            transition: color 0.3s; }
-            footer .foot_box .foot_nav ul li a:link:hover, footer .foot_box .foot_nav ul li a:link:active, footer .foot_box .foot_nav ul li a:visited:hover, footer .foot_box .foot_nav ul li a:visited:active,
-            footer .foot_box .social_link ul li a:link:hover,
-            footer .foot_box .social_link ul li a:link:active,
-            footer .foot_box .social_link ul li a:visited:hover,
-            footer .foot_box .social_link ul li a:visited:active {
-              color: #E56739; }
-    footer .foot_box .social_link li a:link, footer .foot_box .social_link li a:visited {
+      padding-bottom: 3em;
+      display: flex;
+      justify-content: space-evenly; }
+      footer .foot_box .foot_nav a:link, footer .foot_box .foot_nav a:visited,
+      footer .foot_box .social_link a:link,
+      footer .foot_box .social_link a:visited {
+        border: none;
+        color: #5B5B5B;
+        transition: color 0.3s; }
+        footer .foot_box .foot_nav a:link:hover, footer .foot_box .foot_nav a:link:active, footer .foot_box .foot_nav a:visited:hover, footer .foot_box .foot_nav a:visited:active,
+        footer .foot_box .social_link a:link:hover,
+        footer .foot_box .social_link a:link:active,
+        footer .foot_box .social_link a:visited:hover,
+        footer .foot_box .social_link a:visited:active {
+          color: #E56739; }
+    footer .foot_box .social_link a:link, footer .foot_box .social_link a:visited {
       font-size: 150%; }
   footer .rows {
     padding: 2em 0; }
@@ -428,70 +395,44 @@ footer {
     background-repeat: no-repeat;
     height: 100vh;
     background-attachment: fixed; }
-    .main_head .nav_menu {
+    .main_head nav {
       width: 100%;
       height: auto;
-      background: transparent;
       padding: 0;
-      position: relative;
-      top: 0;
-      text-align: center;
-      transform: translateX(0);
-      transition: transform 0.6s ease;
-      z-index: 99;
-      color: #ffffff; }
-      .main_head .nav_menu .nav_ul {
+      margin: 0; }
+      .main_head nav .nav_ul {
         display: flex;
         position: relative;
         justify-content: flex-end;
-        top: 10px;
-        right: 10px; }
-      .main_head .nav_menu .navi {
-        padding: 0.5em;
-        font-weight: 400;
-        font-size: 1em;
+        top: 0;
+        margin-right: 4em; }
+      .main_head nav .navi {
+        color: #5B5B5B;
+        padding: 0.3em 0;
+        margin: 0 0.5em;
+        font-weight: 300;
+        font-size: 1.2em;
         letter-spacing: 0px;
         line-height: 3;
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.8);
         text-transform: uppercase;
         border: none; }
-    .main_head .nav_menu_open {
-      transform: translateX(0); }
-    .main_head .mobile_nav_btn {
-      display: none;
-      width: 30px;
-      height: 25px;
-      position: absolute;
-      margin: 1.5em;
-      right: 10px;
-      top: 10px;
-      z-index: 999;
-      cursor: pointer; }
-      .main_head .mobile_nav_btn .mobile_nav_line {
-        width: 100%;
-        height: 3px;
-        background: rgba(255, 255, 255, 0.8);
-        position: relative;
-        transition: 1s ease; }
-        .main_head .mobile_nav_btn .mobile_nav_line:nth-of-type(2) {
-          margin: 0.35em 0; }
-      .main_head .mobile_nav_btn .mobile_line_top {
-        transform: rotate(45deg);
-        top: 13px;
-        position: absolute; }
-      .main_head .mobile_nav_btn .mobile_line_middle {
-        display: none; }
-      .main_head .mobile_nav_btn .mobile_line_bottom {
-        transform: rotate(135deg);
-        top: 13px;
-        position: absolute; }
+        .main_head nav .navi:hover {
+          border-bottom: 1.5px solid #E56739;
+          transition: 0.5s ease all; }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 2px #efefef; }
 
   .logo {
     position: relative;
     top: 17%;
-    height: 180px;
-    width: auto; }
+    height: 180px; }
 
   .top_banner {
     position: relative;
@@ -525,7 +466,11 @@ footer {
     font-size: 120%; }
 
   .features_head {
-    margin-bottom: 3.5em; }
+    margin-bottom: 3.5em;
+    width: 800px;
+    margin: 0 auto; }
+  .features_row {
+    display: flex; }
 
   .meals_sec {
     margin-bottom: 0; }
@@ -588,10 +533,17 @@ footer {
   .cities {
     width: 90%;
     margin: 5em 5%; }
-    .cities .article_row .rows img {
-      width: 100%; }
-    .cities .article_row .rows h3 {
-      padding: 0.5em 0 0.3em 0; }
+    .cities .article_row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
+      .cities .article_row .rows {
+        width: 20%;
+        padding-right: 2em; }
+        .cities .article_row .rows img {
+          width: 100%; }
+        .cities .article_row .rows h3 {
+          padding: 0.5em 0 0.3em 0; }
 
   .city_ppl,
   .plan_info {
@@ -611,9 +563,11 @@ footer {
     background-attachment: fixed;
     padding: 5em 0; }
     .testimonials blockquote {
-      padding: 8%;
+      padding: 3%;
       font-style: italic;
-      line-height: 145%; }
+      line-height: 145%;
+      width: 400px;
+      margin: 0 auto; }
     .testimonials cite {
       display: block;
       font-size: 90%;
@@ -633,33 +587,37 @@ footer {
         margin-right: 10px; }
 
   .plans_pricing {
-    background: #F4F4F4; }
-    .plans_pricing .plan_box {
-      background-color: #ffffff;
-      border-radius: 5px;
-      width: 90%;
-      margin-left: 5%;
-      padding: 2em 0; }
-      .plans_pricing .plan_box hr {
-        color: #5B5B5B;
-        margin: 1em; }
-      .plans_pricing .plan_box .plan_price {
-        font-size: 300%;
-        font-weight: 100;
-        color: #E56739; }
-        .plans_pricing .plan_box .plan_price span {
-          font-size: 30%;
-          font-weight: 400; }
-      .plans_pricing .plan_box .plan_meal {
-        font-size: 80%;
-        margin-top: -1em; }
-        .plans_pricing .plan_box .plan_meal ul li {
-          font-size: 120%;
-          padding: 0.2em 0; }
-          .plans_pricing .plan_box .plan_meal ul li:before {
-            font-size: 120%; }
-    .plans_pricing .buttons {
-      margin: 1.5em 0; }
+    background: #F4F4F4;
+    padding: 3.5em; }
+    .plans_pricing .rows {
+      display: flex;
+      flex-direction: row; }
+      .plans_pricing .rows .plan_box {
+        background-color: #ffffff;
+        border-radius: 5px;
+        width: 90%;
+        margin-left: 5%;
+        padding: 2em 0; }
+        .plans_pricing .rows .plan_box hr {
+          color: #5B5B5B;
+          margin: 1em; }
+        .plans_pricing .rows .plan_box .plan_price {
+          font-size: 300%;
+          font-weight: 100;
+          color: #E56739; }
+          .plans_pricing .rows .plan_box .plan_price span {
+            font-size: 30%;
+            font-weight: 400; }
+        .plans_pricing .rows .plan_box .plan_meal {
+          font-size: 80%;
+          margin-top: -1em; }
+          .plans_pricing .rows .plan_box .plan_meal ul li {
+            font-size: 120%;
+            padding: 0.2em 0; }
+            .plans_pricing .rows .plan_box .plan_meal ul li:before {
+              font-size: 120%; }
+      .plans_pricing .rows .buttons {
+        margin: 1.5em 0; }
 
   footer {
     position: relative;
@@ -668,34 +626,27 @@ footer {
     footer .foot_box {
       width: 90%;
       margin-left: 5%;
-      display: flex;
-      justify-content: space-around;
       padding-top: 5em;
       font-size: 120%; }
       footer .foot_box .foot_nav,
       footer .foot_box .social_link {
-        padding-bottom: 3em; }
-        footer .foot_box .foot_nav ul,
-        footer .foot_box .social_link ul {
-          display: flex; }
-          footer .foot_box .foot_nav ul li,
-          footer .foot_box .social_link ul li {
-            padding-right: 1em; }
-            footer .foot_box .foot_nav ul li a:link, footer .foot_box .foot_nav ul li a:visited,
-            footer .foot_box .social_link ul li a:link,
-            footer .foot_box .social_link ul li a:visited {
-              border: none;
-              color: #5B5B5B;
-              transition: color 0.3s; }
-              footer .foot_box .foot_nav ul li a:link:hover, footer .foot_box .foot_nav ul li a:link:active, footer .foot_box .foot_nav ul li a:visited:hover, footer .foot_box .foot_nav ul li a:visited:active,
-              footer .foot_box .social_link ul li a:link:hover,
-              footer .foot_box .social_link ul li a:link:active,
-              footer .foot_box .social_link ul li a:visited:hover,
-              footer .foot_box .social_link ul li a:visited:active {
-                color: #E56739; }
-      footer .foot_box .social_link li a:link, footer .foot_box .social_link li a:visited {
-        font-size: 150%; }
-    footer .rows {
-      padding: 2em 0; } }
+        padding-bottom: 1em;
+        display: flex;
+        justify-content: center; }
+        footer .foot_box .foot_nav a:link, footer .foot_box .foot_nav a:visited,
+        footer .foot_box .social_link a:link,
+        footer .foot_box .social_link a:visited {
+          border: none;
+          color: #5B5B5B;
+          transition: color 0.3s;
+          padding: 1em; }
+          footer .foot_box .foot_nav a:link:hover, footer .foot_box .foot_nav a:link:active, footer .foot_box .foot_nav a:visited:hover, footer .foot_box .foot_nav a:visited:active,
+          footer .foot_box .social_link a:link:hover,
+          footer .foot_box .social_link a:link:active,
+          footer .foot_box .social_link a:visited:hover,
+          footer .foot_box .social_link a:visited:active {
+            color: #E56739; }
+      footer .foot_box .social_link a:link, footer .foot_box .social_link a:visited {
+        font-size: 150%; } }
 
 /*# sourceMappingURL=style.css.map */
