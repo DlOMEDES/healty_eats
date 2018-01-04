@@ -109,7 +109,8 @@ p {
   left: 0;
   width: 100%;
   background-color: #ffffff;
-  box-shadow: 0 2px 2px #efefef; }
+  box-shadow: 0 2px 2px #efefef;
+  z-index: 1; }
 
 .logo {
   position: relative;
@@ -404,16 +405,14 @@ footer {
         display: flex;
         position: relative;
         justify-content: flex-end;
-        top: 0;
-        margin-right: 4em; }
+        margin-right: 4em;
+        padding: 1em 0; }
       .main_head nav .navi {
         color: #5B5B5B;
-        padding: 0.3em 0;
         margin: 0 0.5em;
         font-weight: 300;
         font-size: 1.2em;
         letter-spacing: 0px;
-        line-height: 3;
         text-decoration: none;
         text-transform: uppercase;
         border: none; }
